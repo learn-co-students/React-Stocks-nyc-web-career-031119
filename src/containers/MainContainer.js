@@ -8,17 +8,27 @@ class MainContainer extends Component {
   render() {
     return (
       <div>
-        <SearchBar/>
+        <SearchBar
+          filterByType={this.props.filterByType}
+          alphaSort={this.props.alphaSort}
+          priceSort={this.props.priceSort}
+        />
 
           <div className="row">
             <div className="col-8">
 
-              <StockContainer/>
+              <StockContainer
+                stocks={this.props.stocks}
+                buySell={this.props.buySell}
+              />
 
             </div>
             <div className="col-4">
 
-              <PortfolioContainer/>
+              <PortfolioContainer
+                stocks={this.props.stocks}
+                buySell={this.props.buySell}
+              />
 
             </div>
           </div>
